@@ -5,7 +5,7 @@
 
 
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 	$token = $_POST["token"];
 	$paymentMethodId = $_POST["paymentMethodId"];
 	$description = $_POST["description"];
