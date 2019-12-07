@@ -178,7 +178,7 @@
                                       </li>
                                     </ul>
                                     <input type="hidden" name="amount" id="amount"/>
-                                    <input type="hidden" name="description"/>
+                                    <input type="hidden" name="description" value="Samsung Galaxy S9"/>
                                     <input type="hidden" name="paymentMethodId" />
                                     <input type="submit" value="Pay!" />
                                 </fieldset>
