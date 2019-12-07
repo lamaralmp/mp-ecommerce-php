@@ -16,6 +16,7 @@ function addEvent(to, type, fn){
 addEvent(document.querySelector('#cardNumber'), 'keyup', guessingPaymentMethod);
 addEvent(document.querySelector('#cardNumber'), 'change', guessingPaymentMethod);
 addEvent(document.querySelector('#pay'), 'submit', doPay);
+addEvent(document.querySelector('#ticket'), 'click', ticketPayment);
 
 function getBin() {
   const cardnumber = document.getElementById("cardNumber");
@@ -130,3 +131,11 @@ function sdkResponseHandler(status, response) {
         })
     }
 };
+
+function ticketPayment(event) {
+    event.preventDefault();
+
+    document.querySelector('#paymentMethodId').setAttribute('value', 'bolbradesco');
+    document.querySelector('#pay').submit();
+
+}
