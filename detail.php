@@ -184,6 +184,8 @@ MercadoPago\SDK::setAccessToken($access_token);
                                         <input type="hidden" name="description" value="<?php echo $_POST['title']; ?>" />
                                         <input type="hidden" name="paymentMethodId" id="paymentMethodId" />
                                         <input type="submit" value="Pay!" />
+                                        <input type="button" id="ticket" value="Pagar com boleto" />
+
                                     </fieldset>
                                 </form>                              
                             </div>                  
