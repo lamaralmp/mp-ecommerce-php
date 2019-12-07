@@ -1,9 +1,4 @@
-<?php  
-
-	ini_set('display_startup_errors', 1);
-	ini_set('display_errors', 1);
-	error_reporting(-1);
-
+<?php 
 	require_once __DIR__ . '/vendor/autoload.php';
 
 	$token = $_POST["token"];
@@ -12,16 +7,12 @@
 	$installments = $_POST["installments"];
 
 
-
-	app\MercadoPago\SDK::setAccessToken("APP_USR-4233004109173917-022523-d9cc5cdde631ccf7ad9cffce4b29d71d__LA_LB__-31639991");
-
+	MercadoPago\SDK::setAccessToken("TEST-4233004109173917-022523-71f5f5e3ff4e4165b88bbece6a599bdf__LB_LD__-31639991");
 
 
 	//...
 	$payment = new MercadoPago\Payment();
-	print_r($payment);
-	die;
-	$payment->transaction_amount = 181;
+	$payment->transaction_amount = 1000;
 	$payment->token = $token;
 	$payment->description = $description;
 	$payment->installments = $installments;
@@ -29,10 +20,20 @@
 	$payment->payer = array(
 		"email" => "itamar.ilourenco@gmail.com"
 	);
+
 	// Save and posting the payment
 	$payment->save();
 	//...
-	// Print the payment status
+	// Print the payment sitatus
 	echo $payment->status;
-	//...
+
+echo "<br><br><br>";
+
+	echo "Error\n";
+print_r($payment->error);
+
+echo "Resposta completa\n";
+
+	print_r($payment);
+
 ?>

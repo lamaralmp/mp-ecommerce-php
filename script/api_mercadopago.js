@@ -1,6 +1,6 @@
 $(function(){
 
-	var PUBLIC_KEY = "APP_USR-60eb87ce-90c8-4ab6-aa10-97ef5cc831f9"
+	var PUBLIC_KEY = "TEST-061b3b20-e1da-4181-b66c-1dfb90985e17"
     window.Mercadopago.setPublishableKey(PUBLIC_KEY);
 
     window.Mercadopago.getIdentificationTypes()
