@@ -261,6 +261,11 @@
                                                 <input type="hidden" name="title" value="Samsung Galaxy S9">
                                                 <input type="hidden" name="price" value="1500">
                                                 <input type="hidden" name="unit" value="1">
+                                                <select name="payment_method">
+                                                    <option value="credit_card">Cartão de Crédito</option>
+                                                    <option value="bank_slip">Boleto Bancário</option>
+                                                    <option value="mercado_pago">Mercado Pago</option>
+                                                </select>
                                                 <button type="submit" class="mercadopago-button">Comprar</button>
                                             </form>
                                         </div>
@@ -279,7 +284,7 @@
                                                             <div class=""></div>
                                                             <img src="./assets/l6g6.jpg" class="ir ir item-image as-producttile-image" alt="" width="445" height="445" data-desc="LG G6" style="">
                                                         </div>
-                                                        
+
                                                     </div>
                                                 </div>
 
@@ -316,6 +321,11 @@
                                                 <input type="hidden" name="title" value="LG G6">
                                                 <input type="hidden" name="price" value="1000">
                                                 <input type="hidden" name="unit" value="1">
+                                                <select name="payment_method">
+                                                    <option value="credit_card">Cartão de Crédito</option>
+                                                    <option value="bank_slip">Boleto Bancário</option>
+                                                    <option value="mercado_pago">Mercado Pago</option>
+                                                </select>
                                                 <button type="submit" class="mercadopago-button" formmethod="post">Comprar</button>
                                             </form>
                                         </div>
@@ -369,11 +379,16 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                            <form action="/detail.php" method="post">
+                                            <form action="/detail_modal.php" method="post">
                                                 <input type="hidden" name="img" value="./assets/u_10168742.jpg">
                                                 <input type="hidden" name="title" value="iPhone 8">
                                                 <input type="hidden" name="price" value="1600">
                                                 <input type="hidden" name="unit" value="1">
+                                                <select name="payment_method">
+                                                    <option value="credit_card">Cartão de Crédito</option>
+                                                    <option value="bank_slip">Boleto Bancário</option>
+                                                    <option value="mercado_pago">Mercado Pago</option>
+                                                </select>
                                                 <button type="submit" class="mercadopago-button" formmethod="post">Comprar</button>
                                             </form>
                                         </div>
@@ -426,11 +441,16 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                            <form action="/detail.php" method="post">
+                                            <form action="/detail_modal.php" method="post">
                                                 <input type="hidden" name="img" value="./assets/motorola-moto-g5-plus-1.jpg">
                                                 <input type="hidden" name="title" value="Motorola G5">
                                                 <input type="hidden" name="price" value="900">
                                                 <input type="hidden" name="unit" value="1">
+                                                <select name="payment_method">
+                                                    <option value="credit_card">Cartão de Crédito</option>
+                                                    <option value="bank_slip">Boleto Bancário</option>
+                                                    <option value="mercado_pago">Mercado Pago</option>
+                                                </select>
                                                 <button type="submit" class="mercadopago-button" formmethod="post">Comprar</button>
                                             </form>
                                         </div>
@@ -476,11 +496,16 @@
                                                     $800
                                                 </div>
                                             </div>
-                                            <form action="/detail.php" method="post">
+                                            <form action="/detail_modal.php" method="post">
                                                 <input type="hidden" name="img" value="./assets/motorola-moto-g4-3.jpg">
                                                 <input type="hidden" name="title" value="Moto G4">
                                                 <input type="hidden" name="price" value="800">
                                                 <input type="hidden" name="unit" value="1">
+                                                <select name="payment_method">
+                                                    <option value="credit_card">Cartão de Crédito</option>
+                                                    <option value="bank_slip">Boleto Bancário</option>
+                                                    <option value="mercado_pago">Mercado Pago</option>
+                                                </select>
                                                 <button type="submit" class="mercadopago-button" formmethod="post">Comprar</button>
                                             </form>
                                         </div>
@@ -527,11 +552,16 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                            <form action="/detail.php" method="post">
+                                            <form action="/detail_modal.php" method="post">
                                                 <input type="hidden" name="img" value="./assets/003.jpg">
                                                 <input type="hidden" name="title" value="Sony Xperia XZ2">
                                                 <input type="hidden" name="price" value="1000">
                                                 <input type="hidden" name="unit" value="1">
+                                                <select name="payment_method">
+                                                    <option value="credit_card">Cartão de Crédito</option>
+                                                    <option value="bank_slip">Boleto Bancário</option>
+                                                    <option value="mercado_pago">Mercado Pago</option>
+                                                </select>
                                                 <button type="submit" class="mercadopago-button" formmethod="post">Comprar</button>
                                             </form>
                                         </div>
