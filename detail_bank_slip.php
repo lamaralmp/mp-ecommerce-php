@@ -1,21 +1,3 @@
-<?php
-require __DIR__ . '/vendor/autoload.php';
-
-// Configura credenciais
-MercadoPago\SDK::setAccessToken('TEST-7316851626238013-120305-28b36201c0800c8c76f089bbe5eeea1f-138014717');
-
-// Cria um objeto de preferência
-$preference = new MercadoPago\Preference();
-
-// Cria um item na preferência
-$item = new MercadoPago\Item();
-$item->title = $_POST['title'];
-$item->quantity = $_POST['unit'];
-$item->unit_price = $_POST['price'];
-$preference->items = array($item);
-$preference->save();
-?>
-
 <!DOCTYPE html>
 
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser"
@@ -33,11 +15,12 @@ $preference->save();
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="/assets/category-landing.css" media="screen, print">
     <link rel="stylesheet" href="/assets/category.css" media="screen, print">
     <link rel="stylesheet" href="/assets/merch-tools.css" media="screen, print">
     <link rel="stylesheet" href="/assets/fonts" media="">
+
+
 
     <style>
         .as-filter-button-text {
@@ -243,11 +226,6 @@ $preference->save();
             color: #fff;
             cursor: pointer;
             border: 0;
-            display: block;
-            margin: auto;
-            width: 90%;
-            text-align: center;
-            margin-top: 75%;
         } </style>
     <style type="text/css"> @keyframes loading-rotate {
                                 100% {
@@ -536,12 +514,85 @@ $preference->save();
                             <div class="as-producttile-info" style="float:left;min-height: 168px;">
                                 <div class="as-producttile-titlepricewraper" style="min-height: 128px;">
 
-                                    <form action="/processar_pagamento" method="POST">
-                                        <script
-                                                src="https://www.mercadopago.com.br/integrations/v1/web-payment-checkout.js"
-                                                data-preference-id="<?php echo $preference->id; ?>">
-                                        </script>
+                                    <form action="/mp-dx-bank_slip.php" method="post" id="pay" name="pay">
+                                        <fieldset>
+                                            <ul>
+                                                <li>
+                                                    <label for="email">Email</label>
+                                                    <input type="email" id="email" name="email"
+                                                           value="test_user_19653727@testuser.com"
+                                                           placeholder="your email"/>
+                                                </li>
+                                                <li>
+                                                    <label for="docType">Document type:</label>
+                                                    <select id="docType" name="docType">
+                                                        <option value="CPF">CPF</option>
+                                                        <option value="CNPJ">CNPJ</option>
+                                                    </select>
+                                                </li>
+                                                <li>
+                                                    <label for="docNumber">Document number:</label>
+                                                    <input type="text" id="docNumber" name="docNumber"
+                                                           value="36632008844"
+                                                           placeholder="19119119100"/>
+                                                </li>
+                                                <li>
+                                                    <label for="first_name">First Name:</label>
+                                                    <input type="text" name="first_name"
+                                                           placeholder="Test" value="Test"
+                                                           />
+                                                </li>
+                                                <li>
+                                                    <label for="last_name">Last Name</label>
+                                                    <input type="text" id="last_name" name="last_name"
+                                                           placeholder="User" onselectstart="return false"
+                                                           value="User"/>
+                                                </li>
+                                                <li>
+                                                    <label for="zip_code">Zip Code:</label>
+                                                    <input type="text" name="zip_code" id="zip_code"
+                                                           placeholder="06120100"
+                                                           value="06120100"/>
+                                                </li>
+                                                <li>
+                                                    <label for="street_name">Street Name</label>
+                                                    <input type="text" id="street_name" name="street_name"
+                                                           placeholder="Rua Vitória Régia"
+                                                           value="Rua Vitória Régia"/>
+                                                </li>
+                                                <li>
+                                                    <label for="street_number">Street Number:</label>
+                                                    <input type="text" id="street_number" name="street_number"
+                                                           value="114"
+                                                           placeholder="114"/>
+                                                </li>
+
+                                                <li>
+                                                    <label for="neighborhood">Neighborhood:</label>
+                                                    <input type="text" id="neighborhood" name="neighborhood"
+                                                           value="Jardim das Flores"
+                                                           placeholder="Jardim das Flores"/>
+                                                </li>
+                                                <li>
+                                                    <label for="city">City:</label>
+                                                    <input type="text" id="city" name="city"
+                                                    value="Osasco"
+                                                    placeholder="Osasco"/>
+                                                </li>
+                                                <li>
+                                                    <label for="federal_unit">Federal Unit:</label>
+                                                    <input type="text" id="federal_unit" name="federal_unit"
+                                                           value="SP"
+                                                           placeholder="SP"/>
+                                                </li>
+                                            </ul>
+                                            <input type="hidden" name="amount" id="amount" value="<?php echo $_POST['price'] ?>"/>
+                                            <input type="hidden" name="description" value="<?php echo $_POST['title'] ?>" />
+                                            <input type="hidden" name="paymentMethodId"/>
+                                            <input type="submit" value="Pay!"/>
+                                        </fieldset>
                                     </form>
+
 
                                 </div>
                             </div>
@@ -586,5 +637,6 @@ $preference->save();
                 </svg>
             </div>
             <div id="ac-gn-viewport-emitter"></div>
+
 </body>
 </html>        

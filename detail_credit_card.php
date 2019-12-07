@@ -1,21 +1,3 @@
-<?php
-require __DIR__ . '/vendor/autoload.php';
-
-// Configura credenciais
-MercadoPago\SDK::setAccessToken('TEST-7316851626238013-120305-28b36201c0800c8c76f089bbe5eeea1f-138014717');
-
-// Cria um objeto de preferência
-$preference = new MercadoPago\Preference();
-
-// Cria um item na preferência
-$item = new MercadoPago\Item();
-$item->title = $_POST['title'];
-$item->quantity = $_POST['unit'];
-$item->unit_price = $_POST['price'];
-$preference->items = array($item);
-$preference->save();
-?>
-
 <!DOCTYPE html>
 
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser"
@@ -33,11 +15,12 @@ $preference->save();
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="/assets/category-landing.css" media="screen, print">
     <link rel="stylesheet" href="/assets/category.css" media="screen, print">
     <link rel="stylesheet" href="/assets/merch-tools.css" media="screen, print">
     <link rel="stylesheet" href="/assets/fonts" media="">
+
+
 
     <style>
         .as-filter-button-text {
@@ -243,11 +226,6 @@ $preference->save();
             color: #fff;
             cursor: pointer;
             border: 0;
-            display: block;
-            margin: auto;
-            width: 90%;
-            text-align: center;
-            margin-top: 75%;
         } </style>
     <style type="text/css"> @keyframes loading-rotate {
                                 100% {
@@ -536,12 +514,85 @@ $preference->save();
                             <div class="as-producttile-info" style="float:left;min-height: 168px;">
                                 <div class="as-producttile-titlepricewraper" style="min-height: 128px;">
 
-                                    <form action="/processar_pagamento" method="POST">
-                                        <script
-                                                src="https://www.mercadopago.com.br/integrations/v1/web-payment-checkout.js"
-                                                data-preference-id="<?php echo $preference->id; ?>">
-                                        </script>
+                                    <form action="/mp-dx.php" method="post" id="pay" name="pay">
+                                        <fieldset>
+                                            <ul>
+                                                <li>
+                                                    <label for="email">Email</label>
+                                                    <input type="email" id="email" name="email"
+                                                           value="test_user_19653727@testuser.com"
+                                                           placeholder="your email"/>
+                                                </li>
+                                                <li>
+                                                    <label for="cardNumber">Credit card number:</label>
+                                                    <input type="text" id="cardNumber" data-checkout="cardNumber"
+                                                           placeholder="4509 9535 6623 3704" value="5031 7557 3453 0604"
+                                                           onselectstart="return false" onpaste="return false"
+                                                           onCopy="return false" onCut="return false"
+                                                           onDrag="return false" onDrop="return false"
+                                                           autocomplete=off/>
+                                                </li>
+                                                <li>
+                                                    <label for="securityCode">Security code:</label>
+                                                    <input type="text" id="securityCode" data-checkout="securityCode"
+                                                           placeholder="123" onselectstart="return false"
+                                                           value="123"
+                                                           onpaste="return false" onCopy="return false"
+                                                           onCut="return false" onDrag="return false"
+                                                           onDrop="return false" autocomplete=off/>
+                                                </li>
+                                                <li>
+                                                    <label for="cardExpirationMonth">Expiration month:</label>
+                                                    <input type="text" id="cardExpirationMonth"
+                                                           data-checkout="cardExpirationMonth" placeholder="11"
+                                                           value="11"
+                                                           onselectstart="return false" onpaste="return false"
+                                                           onCopy="return false" onCut="return false"
+                                                           onDrag="return false" onDrop="return false"
+                                                           autocomplete=off/>
+                                                </li>
+                                                <li>
+                                                    <label for="cardExpirationYear">Expiration year:</label>
+                                                    <input type="text" id="cardExpirationYear"
+                                                           data-checkout="cardExpirationYear" placeholder="2025"
+                                                           onselectstart="return false" onpaste="return false"
+                                                           value="2025"
+                                                           onCopy="return false" onCut="return false"
+                                                           onDrag="return false" onDrop="return false"
+                                                           autocomplete=off/>
+                                                </li>
+                                                <li>
+                                                    <label for="cardholderName">Card holder name:</label>
+                                                    <input type="text" id="cardholderName"
+                                                           value="APRO"
+                                                           data-checkout="cardholderName" placeholder="APRO"/>
+                                                </li>
+                                                <li>
+                                                    <label for="docType">Document type:</label>
+                                                    <select id="docType" data-checkout="docType">
+
+                                                    </select>
+                                                </li>
+                                                <li>
+                                                    <label for="docNumber">Document number:</label>
+                                                    <input type="text" id="docNumber" data-checkout="docNumber"
+                                                           value="36632008844"
+                                                           placeholder="19119119100"/>
+                                                </li>
+                                                <li>
+                                                    <label for="installments">Installments:</label>
+                                                    <select id="installments" class="form-control"
+                                                            name="installments">
+                                                    </select>
+                                                </li>
+                                            </ul>
+                                            <input type="hidden" name="amount" id="amount" value="<?php echo $_POST['price'] ?>"/>
+                                            <input type="hidden" name="description"/>
+                                            <input type="hidden" name="paymentMethodId"/>
+                                            <input type="submit" value="Pay!"/>
+                                        </fieldset>
                                     </form>
+
 
                                 </div>
                             </div>
@@ -586,5 +637,120 @@ $preference->save();
                 </svg>
             </div>
             <div id="ac-gn-viewport-emitter"></div>
+            <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
+            <script>
+                window.Mercadopago.setPublishableKey("TEST-e8a24e43-a02b-4da9-b2fe-b79033174809");
+                window.Mercadopago.getIdentificationTypes();
+
+                function addEvent(to, type, fn){
+                    if(document.addEventListener){
+                        to.addEventListener(type, fn, false);
+                    } else if(document.attachEvent){
+                        to.attachEvent('on'+type, fn);
+                    } else {
+                        to['on'+type] = fn;
+                    }
+                };
+
+                addEvent(document.querySelector('#cardNumber'), 'keyup', guessingPaymentMethod);
+                addEvent(document.querySelector('#cardNumber'), 'change', guessingPaymentMethod);
+
+                function getBin() {
+                    const cardnumber = document.getElementById("cardNumber");
+                    return cardnumber.value.substring(0,6);
+                };
+
+                function guessingPaymentMethod(event) {
+                    var bin = getBin();
+
+                    if (event.type == "keyup") {
+                        if (bin.length >= 6) {
+                            window.Mercadopago.getPaymentMethod({
+                                "bin": bin
+                            }, setPaymentMethodInfo);
+                        }
+                    } else {
+                        setTimeout(function() {
+                            if (bin.length >= 6) {
+                                window.Mercadopago.getPaymentMethod({
+                                    "bin": bin
+                                }, setPaymentMethodInfo);
+                            }
+                        }, 100);
+                    }
+                };
+                function setInstallmentInfo(status, response) {
+                    var selectorInstallments = document.querySelector("#installments"),
+                        fragment = document.createDocumentFragment();
+                    selectorInstallments.options.length = 0;
+
+                    if (response.length > 0) {
+                        var option = new Option("Escolha...", '-1'),
+                            payerCosts = response[0].payer_costs;
+                        fragment.appendChild(option);
+
+                        for (var i = 0; i < payerCosts.length; i++) {
+                            fragment.appendChild(new Option(payerCosts[i].recommended_message, payerCosts[i].installments));
+                        }
+
+                        selectorInstallments.appendChild(fragment);
+                        selectorInstallments.removeAttribute('disabled');
+                    }
+                };
+                function setPaymentMethodInfo(status, response) {
+                    if (status == 200) {
+                        const paymentMethodElement = document.querySelector('input[name=paymentMethodId]');
+
+                        if (paymentMethodElement) {
+                            paymentMethodElement.value = response[0].id;
+                        } else {
+                            const input = document.createElement('input');
+                            input.setAttribute('name', 'paymentMethodId');
+                            input.setAttribute('type', 'hidden');
+                            input.setAttribute('value', response[0].id);
+
+                            form.appendChild(input);
+                        }
+
+                        Mercadopago.getInstallments({
+                            "bin": getBin(),
+                            "amount": parseFloat(document.querySelector('#amount').value),
+                        }, setInstallmentInfo);
+
+                    } else {
+                        alert(`payment method info error: ${response}`);
+                    }
+                };
+
+                doSubmit = false;
+                addEvent(document.querySelector('#pay'), 'submit', doPay);
+                function doPay(event){
+                    event.preventDefault();
+                    if(!doSubmit){
+
+                        var $form = document.querySelector('#pay');
+                        window.Mercadopago.createToken($form, sdkResponseHandler); // The function "sdkResponseHandler" is defined below
+
+                        return false;
+                    }
+                };
+
+                function sdkResponseHandler(status, response) {
+                    if (status != 200 && status != 201) {
+                        alert("verify filled data");
+                    }else{
+                        var form = document.querySelector('#pay');
+                        var card = document.createElement('input');
+                        card.setAttribute('name', 'token');
+                        card.setAttribute('type', 'hidden');
+                        card.setAttribute('value', response.id);
+                        form.appendChild(card);
+                        doSubmit=true;
+                        form.submit();
+                    }
+                };
+
+
+            </script>
 </body>
 </html>        

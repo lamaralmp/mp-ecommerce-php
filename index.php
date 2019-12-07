@@ -1,11 +1,3 @@
-<?php
-
-require __DIR__  . '/vendor/autoload.php';
-MercadoPago\SDK::setAccessToken("TEST-7316851626238013-120305-28b36201c0800c8c76f089bbe5eeea1f-138014717");
-
-$payment_methods = MercadoPago::get("/v1/payment_methods");
-var_dump($payment_methods);
-?>
 <!DOCTYPE html>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
@@ -269,6 +261,11 @@ var_dump($payment_methods);
                                                 <input type="hidden" name="title" value="Samsung Galaxy S9">
                                                 <input type="hidden" name="price" value="1500">
                                                 <input type="hidden" name="unit" value="1">
+                                                <select name="payment_method">
+                                                    <option value="credit_card">Cartão de Crédito</option>
+                                                    <option value="bank_slip">Boleto Bancário</option>
+                                                    <option value="mercado_pago">Mercado Pago</option>
+                                                </select>
                                                 <button type="submit" class="mercadopago-button">Comprar</button>
                                             </form>
                                         </div>
@@ -324,6 +321,11 @@ var_dump($payment_methods);
                                                 <input type="hidden" name="title" value="LG G6">
                                                 <input type="hidden" name="price" value="1000">
                                                 <input type="hidden" name="unit" value="1">
+                                                <select name="payment_method">
+                                                    <option value="credit_card">Cartão de Crédito</option>
+                                                    <option value="bank_slip">Boleto Bancário</option>
+                                                    <option value="mercado_pago">Mercado Pago</option>
+                                                </select>
                                                 <button type="submit" class="mercadopago-button" formmethod="post">Comprar</button>
                                             </form>
                                         </div>
@@ -382,6 +384,11 @@ var_dump($payment_methods);
                                                 <input type="hidden" name="title" value="iPhone 8">
                                                 <input type="hidden" name="price" value="1600">
                                                 <input type="hidden" name="unit" value="1">
+                                                <select name="payment_method">
+                                                    <option value="credit_card">Cartão de Crédito</option>
+                                                    <option value="bank_slip">Boleto Bancário</option>
+                                                    <option value="mercado_pago">Mercado Pago</option>
+                                                </select>
                                                 <button type="submit" class="mercadopago-button" formmethod="post">Comprar</button>
                                             </form>
                                         </div>
@@ -439,6 +446,11 @@ var_dump($payment_methods);
                                                 <input type="hidden" name="title" value="Motorola G5">
                                                 <input type="hidden" name="price" value="900">
                                                 <input type="hidden" name="unit" value="1">
+                                                <select name="payment_method">
+                                                    <option value="credit_card">Cartão de Crédito</option>
+                                                    <option value="bank_slip">Boleto Bancário</option>
+                                                    <option value="mercado_pago">Mercado Pago</option>
+                                                </select>
                                                 <button type="submit" class="mercadopago-button" formmethod="post">Comprar</button>
                                             </form>
                                         </div>
@@ -489,6 +501,11 @@ var_dump($payment_methods);
                                                 <input type="hidden" name="title" value="Moto G4">
                                                 <input type="hidden" name="price" value="800">
                                                 <input type="hidden" name="unit" value="1">
+                                                <select name="payment_method">
+                                                    <option value="credit_card">Cartão de Crédito</option>
+                                                    <option value="bank_slip">Boleto Bancário</option>
+                                                    <option value="mercado_pago">Mercado Pago</option>
+                                                </select>
                                                 <button type="submit" class="mercadopago-button" formmethod="post">Comprar</button>
                                             </form>
                                         </div>
@@ -540,6 +557,11 @@ var_dump($payment_methods);
                                                 <input type="hidden" name="title" value="Sony Xperia XZ2">
                                                 <input type="hidden" name="price" value="1000">
                                                 <input type="hidden" name="unit" value="1">
+                                                <select name="payment_method">
+                                                    <option value="credit_card">Cartão de Crédito</option>
+                                                    <option value="bank_slip">Boleto Bancário</option>
+                                                    <option value="mercado_pago">Mercado Pago</option>
+                                                </select>
                                                 <button type="submit" class="mercadopago-button" formmethod="post">Comprar</button>
                                             </form>
                                         </div>
