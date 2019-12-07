@@ -169,11 +169,11 @@ MercadoPago\SDK::setAccessToken($access_token);
                                             </li>
                                             <li>
                                                 <label for="docType">Document type:</label>
-                                                <select id="docType" data-checkout="docType"></select>
+                                                <select id="docType" name="docType" data-checkout="docType"></select>
                                             </li>
                                             <li>
                                                 <label for="docNumber">Document number:</label>
-                                                <input type="text" id="docNumber" data-checkout="docNumber" placeholder="19119119100" value="19119119100" />
+                                                <input type="text" id="docNumber" name="docNumber" data-checkout="docNumber" placeholder="19119119100" value="19119119100" />
                                             </li>
                                             <li>
                                                <label for="installments">Installments:</label>
@@ -182,7 +182,7 @@ MercadoPago\SDK::setAccessToken($access_token);
                                         </ul>
                                         <input type="hidden" name="amount" id="amount" value="<?php echo $_POST['price']; ?>" />
                                         <input type="hidden" name="description" value="<?php echo $_POST['title']; ?>" />
-                                        <input type="hidden" name="paymentMethodId" />
+                                        <input type="hidden" name="paymentMethodId" id="paymentMethodId" />
                                         <input type="submit" value="Pay!" />
                                     </fieldset>
                                 </form>                              
