@@ -9,6 +9,9 @@ use MercadoPago\Payment;
 	error_reporting(-1);
 
 
+echo __DIR__ . '/vendor/autoload.php';
+
+die;
 	require_once __DIR__ . '/vendor/autoload.php';
 
 	$token = $_POST["token"];
