@@ -13,7 +13,7 @@
 
 
 
-	MercadoPago\SDK::setAccessToken("ENV_ACCESS_TOKEN");
+	MercadoPago\SDK::setAccessToken("APP_USR-4233004109173917-022523-d9cc5cdde631ccf7ad9cffce4b29d71d__LA_LB__-31639991");
 	//...
 	$payment = new MercadoPago\Payment();
 	$payment->transaction_amount = 181;
