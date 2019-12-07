@@ -1,5 +1,5 @@
 {
     "require": {
-        "app/mercadopago/dx-php": "dev-master"
+        "mercadopago/dx-php": "dev-master"
     }
 }
