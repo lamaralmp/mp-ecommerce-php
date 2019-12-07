@@ -4,14 +4,20 @@
 	ini_set('display_errors', 1);
 	error_reporting(-1);
 
-	require_once __DIR__ . '/../vendor/autoload.php';
+
+	require_once __DIR__ . '/vendor/autoload.php';
+
 	$token = $_POST["token"];
 	$paymentMethodId = $_POST["paymentMethodId"];
 	$description = $_POST["description"];
 	$installments = $_POST["installments"];
 
 
-	MercadoPago\SDK::setAccessToken("ENV_ACCESS_TOKEN");
+
+	MercadoPago\SDK::setAccessToken("APP_USR-4233004109173917-022523-d9cc5cdde631ccf7ad9cffce4b29d71d__LA_LB__-31639991");
+
+
+
 	//...
 	$payment = new MercadoPago\Payment();
 	print_r($payment);
