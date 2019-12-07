@@ -5,6 +5,7 @@
     <title>Loja e-commerce</title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <base href="https://762a5e7c.ngrok.io/mp-ecommerce-php/">
     <meta name="format-detection" content="telephone=no">
 
     <script
@@ -12,13 +13,13 @@
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="/assets/category-landing.css" media="screen, print">
+    <link rel="stylesheet" href="./assets/category-landing.css" media="screen, print">
 
-    <link rel="stylesheet" href="/assets/category.css" media="screen, print">
+    <link rel="stylesheet" href="./assets/category.css" media="screen, print">
 
-    <link rel="stylesheet" href="/assets/merch-tools.css" media="screen, print">
+    <link rel="stylesheet" href="./assets/merch-tools.css" media="screen, print">
 
-    <link rel="stylesheet" href="/assets/fonts" media="">
+    <link rel="stylesheet" href="./assets/fonts" media="">
     <style>
         .as-filter-button-text {
             font-size: 26px;
@@ -256,7 +257,7 @@
                                                     $1.500
                                                 </div>
                                             </div>
-                                            <form action="/detail.php" method="post">
+                                            <form action="./detail.php" method="post">
                                                 <input type="hidden" name="img" value="./assets/samsung-galaxy-s9-xxl.jpg">
                                                 <input type="hidden" name="title" value="Samsung Galaxy S9">
                                                 <input type="hidden" name="price" value="1500">
@@ -311,7 +312,7 @@
                                                     $1.000
                                                 </div>
                                             </div>
-                                            <form action="/detail.php" method="post">
+                                            <form action="./detail.php" method="post">
                                                 <input type="hidden" name="img" value="./assets/l6g6.jpg">
                                                 <input type="hidden" name="title" value="LG G6">
                                                 <input type="hidden" name="price" value="1000">
@@ -369,7 +370,7 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                            <form action="/detail.php" method="post">
+                                            <form action="./detail.php" method="post">
                                                 <input type="hidden" name="img" value="./assets/u_10168742.jpg">
                                                 <input type="hidden" name="title" value="iPhone 8">
                                                 <input type="hidden" name="price" value="1600">
@@ -426,7 +427,7 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                            <form action="/detail.php" method="post">
+                                            <form action="./detail.php" method="post">
                                                 <input type="hidden" name="img" value="./assets/motorola-moto-g5-plus-1.jpg">
                                                 <input type="hidden" name="title" value="Motorola G5">
                                                 <input type="hidden" name="price" value="900">
@@ -476,7 +477,7 @@
                                                     $800
                                                 </div>
                                             </div>
-                                            <form action="/detail.php" method="post">
+                                            <form action="./detail.php" method="post">
                                                 <input type="hidden" name="img" value="./assets/motorola-moto-g4-3.jpg">
                                                 <input type="hidden" name="title" value="Moto G4">
                                                 <input type="hidden" name="price" value="800">
@@ -527,7 +528,7 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                            <form action="/detail.php" method="post">
+                                            <form action="./detail.php" method="post">
                                                 <input type="hidden" name="img" value="./assets/003.jpg">
                                                 <input type="hidden" name="title" value="Sony Xperia XZ2">
                                                 <input type="hidden" name="price" value="1000">
