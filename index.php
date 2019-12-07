@@ -1,3 +1,11 @@
+<?php
+
+require __DIR__  . '/vendor/autoload.php';
+MercadoPago\SDK::setAccessToken("TEST-7316851626238013-120305-28b36201c0800c8c76f089bbe5eeea1f-138014717");
+
+$payment_methods = MercadoPago::get("/v1/payment_methods");
+var_dump($payment_methods);
+?>
 <!DOCTYPE html>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
@@ -279,7 +287,7 @@
                                                             <div class=""></div>
                                                             <img src="./assets/l6g6.jpg" class="ir ir item-image as-producttile-image" alt="" width="445" height="445" data-desc="LG G6" style="">
                                                         </div>
-                                                        
+
                                                     </div>
                                                 </div>
 
@@ -369,7 +377,7 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                            <form action="/detail.php" method="post">
+                                            <form action="/detail_modal.php" method="post">
                                                 <input type="hidden" name="img" value="./assets/u_10168742.jpg">
                                                 <input type="hidden" name="title" value="iPhone 8">
                                                 <input type="hidden" name="price" value="1600">
@@ -426,7 +434,7 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                            <form action="/detail.php" method="post">
+                                            <form action="/detail_modal.php" method="post">
                                                 <input type="hidden" name="img" value="./assets/motorola-moto-g5-plus-1.jpg">
                                                 <input type="hidden" name="title" value="Motorola G5">
                                                 <input type="hidden" name="price" value="900">
@@ -476,7 +484,7 @@
                                                     $800
                                                 </div>
                                             </div>
-                                            <form action="/detail.php" method="post">
+                                            <form action="/detail_modal.php" method="post">
                                                 <input type="hidden" name="img" value="./assets/motorola-moto-g4-3.jpg">
                                                 <input type="hidden" name="title" value="Moto G4">
                                                 <input type="hidden" name="price" value="800">
@@ -527,7 +535,7 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                            <form action="/detail.php" method="post">
+                                            <form action="/detail_modal.php" method="post">
                                                 <input type="hidden" name="img" value="./assets/003.jpg">
                                                 <input type="hidden" name="title" value="Sony Xperia XZ2">
                                                 <input type="hidden" name="price" value="1000">
